@@ -7,6 +7,12 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace (2).xml
+.idea/workspace (3).xml
+
 
 # AWS User-specific
 .idea/**/aws.xml
