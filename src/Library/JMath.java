@@ -1,4 +1,4 @@
-package calc;
+package Library;
 
 public class JMath {
 
