@@ -35,7 +35,7 @@ public class JMath {
         if (n <= 0) {
             return 0;
         }
-        else if (n > 20) { // уточнить
+        else if (n > 100) { // уточнить
             return 0;
         }
         else {
