@@ -1,5 +1,6 @@
 package GUI.Listeners;
 
+import GUI.OperatorPriority;
 import GUI.Display;
 import Library.TwoStep;
 import static GUI.JCalcVars.*;
@@ -15,33 +16,21 @@ public class EqualBtnListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent evt) {
 
-        if (oneStepFlag == false) {
-            x0 = x1;
-            x1 = xInDbl;
+        if (!currentOpr.equals(evt.getActionCommand())) {
+
+            int priority = 2;
+
+            while (!operatorStack.empty()) {
+                if(OperatorPriority.getP(operatorStack.peek()) >= priority) {
+                    TwoStep.Evaluate(operatorStack.pop());
+                }
+            }
+
+            Display.setDisplay(xInDbl);
+            xStack.push(xInDbl);
+
+            xInStr = "";
+
         }
-
-        if (currentOpr != "=") {
-            x1 = xInDbl;
-            prevOprSave = currentOpr;
-        }
-
-        oneStepFlag = true;
-        previousOpr = currentOpr;
-        currentOpr = evt.getActionCommand(); // можно заменить на "="
-        repeatFlag = currentOpr == previousOpr;
-
-
-        if (repeatFlag == true) {
-            xInDbl = xInput;
-        }
-
-        actionStatus = ActionStatus.actionIsCorrect;
-
-        TwoStep.Evaluate(prevOprSave); // доработать с параметром
-
-        Display.setDisplay(xInDbl);
-        x1 = xInDbl;
-        xInStr = "";
     }
-
 }

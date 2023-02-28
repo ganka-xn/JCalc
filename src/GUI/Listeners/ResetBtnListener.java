@@ -10,10 +10,11 @@ public class ResetBtnListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent evt) {
-        x0 = x1 = 0;
         xInStr = "";
         currentOpr = "";
         previousOpr = "";
         ioPane.fieldX.setText("0");
+        xStack.clear();
+        operatorStack.clear();
     }
 }

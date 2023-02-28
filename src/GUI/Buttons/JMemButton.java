@@ -6,18 +6,19 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 import static GUI.ColorLib.*;
+import static GUI.JCalcVars.frameWidth;
 
 public class JMemButton extends JButton {
 
     public JMemButton(String name, ActionListener listener) {
 
         this.setText(name);
-        this.setFont(new Font("Helvetica Neue UltraLight", Font.PLAIN, 18));
+        this.setFont(new Font("Helvetica Neue UltraLight", Font.PLAIN, 17));
         this.setForeground(Color.white);
-        this.setBorder(new LineBorder(Color.darkGray));
         this.setBackground(charcoalColor); // charcoalColor
-        this.setMinimumSize(new Dimension(60, 40));
-        this.setMaximumSize(new Dimension(300, 60));
+        this.setBorder(new LineBorder(Color.darkGray));
+        this.setMinimumSize(new Dimension(frameWidth / 6 , 40));
+        this.setMaximumSize(new Dimension(frameWidth / 6, 40));
         this.addActionListener(listener);
     }
 

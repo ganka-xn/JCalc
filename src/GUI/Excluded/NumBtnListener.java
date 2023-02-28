@@ -1,9 +1,9 @@
-package GUI.Listeners;
+package GUI.Excluded;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static GUI.JCalc.*;
+import static GUI.JCalc.ioPane;
 import static GUI.JCalcVars.*;
 
 public class NumBtnListener implements ActionListener {
@@ -14,7 +14,7 @@ public class NumBtnListener implements ActionListener {
     public void actionPerformed(ActionEvent evt) {
         if (xInStr.contains(".") && evt.getActionCommand() == ".") {
             return;
-        } else if (xInStr == "" && evt.getActionCommand() == "0" && xInDbl == 0) {
+        } else if (xInStr == "" && evt.getActionCommand() == "0" && x1 == 0) {
             return;
         } else if (xInStr == "" && evt.getActionCommand() == ".") {
             xInStr = "0.";
@@ -26,6 +26,8 @@ public class NumBtnListener implements ActionListener {
             xInput = Double.parseDouble(xInStr);
         }
         xInDbl = xInput;
-        currentOpr = evt.getActionCommand();
+        curButton = ButtonClick.NumButton;
+//            numBtnFlag = true;
     }
+
 }

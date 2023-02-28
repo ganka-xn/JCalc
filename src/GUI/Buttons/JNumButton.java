@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 import static GUI.ColorLib.*;
+import static GUI.JCalcVars.frameWidth;
 
 public class JNumButton extends JButton {
 
@@ -14,10 +15,10 @@ public class JNumButton extends JButton {
         this.setText(name);
         this.setFont(new Font("Helvetica Neue UltraLight", Font.PLAIN, 22));
         this.setForeground(Color.white);
-        this.setBorder(new LineBorder(Color.darkGray));
         this.setBackground(steelColor); // steelColor
-        this.setMinimumSize(new Dimension(60, 40));
-        this.setMaximumSize(new Dimension(300, 60));
+        this.setBorder(new LineBorder(Color.darkGray));
+        this.setMinimumSize(new Dimension(frameWidth / 5, 40));
+        this.setMaximumSize(new Dimension(frameWidth / 5 * 2 + 20, 60));
         this.addActionListener(listener);
     }
 }

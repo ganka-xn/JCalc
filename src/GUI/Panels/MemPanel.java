@@ -10,6 +10,8 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.*;
 import java.awt.*;
 
+import static GUI.JCalcVars.frameWidth;
+
 public class MemPanel extends JPanel {
 
 /*    // Var
@@ -24,7 +26,7 @@ public class MemPanel extends JPanel {
     public MemPanel() {
 
         //======== this ========
-        setSize(new Dimension(360, 60));
+        setSize(new Dimension(frameWidth, 60));
         setLayout(new MigLayout(
                 "fillx,insets 0 0 0 0,hidemode 3,gap 0 0",
                 // columns
@@ -52,36 +54,7 @@ public class MemPanel extends JPanel {
         add(factory.createButton(ButtonType.JMEMBUTTON, "L/D", ldBtnListener), "cell 4 0");
         add(factory.createButton(ButtonType.JMEMBUTTON, "Alt", altBtnListener), "cell 5 0");
 
-/*        //---- btnMR ----
-        btnMR = new JOprButton("mr");
-        btnMR.addActionListener(memBtnListener);
-        add(btnMR, "cell 0 0");
-
-        //---- btnMPlus ----
-        btnMPlus = new JOprButton("m+");
-        btnMPlus.addActionListener(memBtnListener);
-        add(btnMPlus, "cell 1 0");
-
-        //---- btnMMinus ----
-        btnMMinus = new JOprButton("m-");
-        btnMMinus.addActionListener(memBtnListener);
-        add(btnMMinus, "cell 2 0");
-
-        //---- btnMC ----
-        btnMC = new JOprButton("mc");
-        btnMC.addActionListener(memBtnListener);
-        add(btnMC, "cell 3 0");
-
-        //---- button1 ----
-        btnLD = new JOprButton("L/D");
-        btnLD.addActionListener(btnLDListener);
-        add(btnLD, "cell 4 0");
-
-        //---- btnOpt ----
-
         // todo btnAlt
-        btnAlt = new JOprButton("Alt");
-        add(btnAlt, "cell 5 0");*/
 
     }
 }

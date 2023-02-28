@@ -2,13 +2,14 @@ package GUI.Panels;
 
 import GUI.ColorLib;
 import net.miginfocom.swing.MigLayout;
-import net.miginfocom.swing.*;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.font.TextAttribute;
 import java.util.Map;
+
+import static GUI.JCalcVars.frameWidth;
 
 public class IOPanel extends JPanel {
 
@@ -25,7 +26,6 @@ public class IOPanel extends JPanel {
 
         // Content
         fieldX = new JTextField(16);
-        // fieldX.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 32));
         fieldX.setFont(new Font("Helvetica Neue UltraLight", Font.PLAIN, 42));
         fieldX.setForeground(ColorLib.sazeracColor);
 
@@ -35,7 +35,8 @@ public class IOPanel extends JPanel {
         fieldX.setFont(font.deriveFont(attributes));
 
         fieldX.setHorizontalAlignment(SwingConstants.RIGHT);
-        fieldX.setMinimumSize(new Dimension(360, 40));
+        fieldX.setMinimumSize(new Dimension(frameWidth, 60));
+        fieldX.setMaximumSize(new Dimension(frameWidth, 60));
         fieldX.setBorder(new EmptyBorder(0, 0, 0, 0));
         fieldX.setText("0");
         fieldX.setEditable(false);

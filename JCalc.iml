@@ -11,6 +11,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/Excluded/test" />
       <excludeFolder url="file://$MODULE_DIR$/src/Excluded" />
       <excludeFolder url="file://$MODULE_DIR$/src/Excluded/lessons" />
+      <excludeFolder url="file://$MODULE_DIR$/src/GUI/Excluded" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

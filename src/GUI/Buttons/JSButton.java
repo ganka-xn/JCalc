@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 import static GUI.ColorLib.*;
+import static GUI.JCalcVars.frameWidth;
 
 public class JSButton extends JButton {
 
@@ -16,9 +17,8 @@ public class JSButton extends JButton {
         this.setForeground(Color.white);
         this.setBackground(lightningYellowColor); // default charcoalColor
         this.setBorder(new LineBorder(bunkerColor));
-        this.setMinimumSize(new Dimension(60, 40));
-        this.setMaximumSize(new Dimension(300, 60));
+        this.setMinimumSize(new Dimension(frameWidth / 5, 40));
+        this.setMaximumSize(new Dimension(frameWidth / 5 * 2 + 20, 60));
         this.addActionListener(listener);
     }
-
 }

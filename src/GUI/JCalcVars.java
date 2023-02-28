@@ -8,8 +8,6 @@ import java.util.Stack;
 public class JCalcVars {
 
     public static double
-            x0 = 0,
-            x1 = 0,
             xInDbl = 0,
             memDbl = 0,
             xInput = 0;
@@ -31,6 +29,7 @@ public class JCalcVars {
     public static boolean oneStepFlag = false;
     public static boolean repeatFlag = false;
 
+    public static final int frameWidth = 420;
 
     public enum LightFlag { Light, Dark }
     public static LightFlag lightFlag = LightFlag.Dark;

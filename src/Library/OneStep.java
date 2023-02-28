@@ -4,9 +4,9 @@ import static GUI.JCalcVars.*;
 
 public class OneStep {
 
-    public static void Evaluate() {
+    public static void Evaluate(String operator) {
 
-        switch (oneStepOpr) {
+        switch (operator) {
             case "Del":
                 break;
             // todo доработать
@@ -14,11 +14,11 @@ public class OneStep {
                 xInDbl = -xInDbl;
                 break;
             case "%":
-                if (x0 == 0) {
+                if (xStack.empty()) {
                     xInDbl = xInDbl / 100;
                 }
                 else {
-                    xInDbl = x0 * xInDbl / 100;
+                    xInDbl = xStack.peek() * xInDbl / 100;
                 }
                 break;
             case "x^2":
@@ -64,17 +64,10 @@ public class OneStep {
             case "e":
                 xInDbl = Math.exp(1);
                 break;
-// todo add func to (   ) operators
-            case "(":
-
-                break;
-            case ")":
-
-                break;
             case "x!":
                 xInDbl = JMath.factorial(xInDbl);
                 break;
-            case "Rand":
+            case "rand":
                 xInDbl = Math.random();
                 break;
             case "Fib(n)":

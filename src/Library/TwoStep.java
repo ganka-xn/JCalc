@@ -6,38 +6,39 @@ public class TwoStep {
 
     public static void Evaluate(String operator) {
 
-        // fixme 2+sqrt(3)
-
         switch (operator) {
-            case "":
-                break;
-            case "=":
-//                    xInDbl = x1;
-                break;
             case "+":
-                xInDbl = x0 + xInDbl;
+                xInDbl = xStack.pop() + xInDbl;
                 break;
             case "-":
-                xInDbl = x0 - xInDbl;
+                xInDbl = xStack.pop() - xInDbl;
                 break;
-            case "\u00d7": //multiply
-                xInDbl = x0 * xInDbl;
+            case "\u00d7":                                      //multiply
+                xInDbl = xStack.pop() * xInDbl;
                 break;
-            case "\u00f7": //divide
-                if (x1 == 0) {
+            case "\u00f7":                                      //divide
+                if (xInDbl == 0) {
                     actionStatus = ActionStatus.Infinity;
                 } else {
-                    xInDbl = x0 / xInDbl;
+                    xInDbl = xStack.pop() / xInDbl;
                 }
                 break;
-            case "x^a":
-                xInDbl = Math.pow(x0, xInDbl);
+            case "x^y":
+                xInDbl = Math.pow(xStack.pop(), xInDbl);
                 break;
-            case "a\u221ax": // y root of x
-                xInDbl = Math.pow(x0, 1/xInDbl);
+            case "y\u221ax":                                    // y root of x
+                xInDbl = Math.pow(xStack.pop(), 1/xInDbl);
                 break;
-            case "loga(x)":
-                xInDbl = Math.log(xInDbl) / Math.log(x0);
+            case "logy(x)":
+                xInDbl = Math.log(xInDbl) / Math.log(xStack.pop());
+                break;
+            case "%":
+                if (xStack.peek() == 0) {
+                    xInDbl = xInDbl / 100;
+                }
+                else {
+                    xInDbl = xStack.pop() * xInDbl / 100;
+                }
                 break;
         }
     }
