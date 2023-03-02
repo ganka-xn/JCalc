@@ -4,6 +4,7 @@ import GUI.OperatorPriority;
 import GUI.Display;
 import Library.TwoStep;
 
+import static GUI.JCalc.ioPane;
 import static GUI.JCalcVars.*;
 
 import java.awt.event.ActionEvent;
@@ -17,13 +18,8 @@ public class TwoStepBtnListener implements ActionListener {
         actionStatus = ActionStatus.actionIsCorrect;
 
         if (!operatorStack.empty()) {
-            if (OperatorPriority.getP(operatorStack.peek()) > OperatorPriority.getP(evt.getActionCommand())) {
-                while (!operatorStack.empty()) {
-                    if (OperatorPriority.getP(operatorStack.peek()) >= OperatorPriority.getP(evt.getActionCommand())) {
-                        TwoStep.Evaluate(operatorStack.pop());
-                    }
-                    else break;
-                }
+            if (OperatorPriority.getP(operatorStack.peek()) >= OperatorPriority.getP(evt.getActionCommand())) {
+                TwoStep.Evaluate(operatorStack.pop());
             }
         }
 

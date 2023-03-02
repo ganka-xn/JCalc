@@ -1,15 +1,14 @@
 package Library;
 
 import static GUI.JCalcVars.*;
+import static java.lang.Double.parseDouble;
 
 public class OneStep {
 
     public static void Evaluate(String operator) {
 
         switch (operator) {
-            case "Del":
-                break;
-            // todo доработать
+
             case "\u00b1":
                 xInDbl = -xInDbl;
                 break;

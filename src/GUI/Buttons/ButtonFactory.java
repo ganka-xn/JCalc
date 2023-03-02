@@ -1,5 +1,7 @@
 package GUI.Buttons;
 
+//import GUI.Excluded.InputKeyListener;
+
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
@@ -10,12 +12,13 @@ public class ButtonFactory {
         JButton jButton = null;
 
         switch (type) {
-            case JNUMBUTTON:
+/*            case JNUMBUTTON:
+//                InputKeyListener keyListener = new InputKeyListener();
                 jButton = new JNumButton(btnName, listener);
                 break;
             case JSIMPLEOPRBUTTON:
                 jButton = new JSButton(btnName, listener);
-                break;
+                break;*/
             case JOPRBUTTON:
                 jButton = new JOprButton(btnName, listener);
                 break;

@@ -1,8 +1,8 @@
 package GUI.Buttons;
 
 public enum ButtonType {
-    JNUMBUTTON,
-    JSIMPLEOPRBUTTON,
+//    JNUMBUTTON,
+//    JSIMPLEOPRBUTTON,
     JOPRBUTTON,
     JMEMBUTTON,
 }

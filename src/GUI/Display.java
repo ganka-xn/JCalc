@@ -1,15 +1,39 @@
 package GUI;
 
+import java.awt.*;
 import java.text.DecimalFormat;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import static GUI.JCalcVars.*;
 import static GUI.JCalc.ioPane;
+import GUI.JCalc;
 
 public class Display {
 
+    static int counter = 0;
+    static ScheduledExecutorService service;
+
     public static void setDisplay(double displayValue) {
 
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                if (counter++ >= 2) {
+                    service.shutdown();
+                    counter = 0;
+                } else {
+                    if (counter % 2 == 1) {
+                        ioPane.fieldX.setForeground(ioPane.getBackground());
+                    } else {
+                        ioPane.fieldX.setForeground(ColorLib.sazeracColor);
+                    }
+                }
+            }
+        };
         String displayString = "";
+//        ioPane.fieldX.setText(displayString);
 
         switch (actionStatus) {
             case actionIsCorrect:
@@ -38,6 +62,8 @@ public class Display {
                 break;
         }
         ioPane.fieldX.setText(displayString);
-    }
+        service = Executors.newSingleThreadScheduledExecutor();
+        service.scheduleAtFixedRate(runnable, 0, 100, TimeUnit.MILLISECONDS);
 
+    }
 }

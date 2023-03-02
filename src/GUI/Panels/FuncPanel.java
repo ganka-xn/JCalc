@@ -2,6 +2,7 @@ package GUI.Panels;
 
 import GUI.Buttons.ButtonFactory;
 import GUI.Buttons.ButtonType;
+import GUI.Buttons.JNumButton;
 import GUI.Buttons.JOprButton;
 import GUI.Listeners.CloseBracketListener;
 import GUI.Listeners.OneStepBtnListener;
@@ -13,16 +14,21 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.*;
 import java.awt.*;
 
+import static GUI.ColorLib.bunkerColor;
+import static GUI.ColorLib.steelColor;
 import static GUI.JCalcVars.frameWidth;
 
 public class FuncPanel extends JPanel {
+
+    public JOprButton btnOpenBracket, btnCloseBracket;
 
     public FuncPanel() {
 
         //======== this ========
         setMinimumSize(new Dimension(frameWidth, 180));
+        setBackground(bunkerColor);
         setLayout(new MigLayout(
-                "insets 0 0 0 0,hidemode 3,gap 0 0",
+                "insets 0 0 0 0,hidemode 3,gap 1 1",
                 // columns
                 "[grow,fill]" +
                         "[grow,fill]" +
@@ -61,8 +67,17 @@ public class FuncPanel extends JPanel {
         add(factory.createButton(ButtonType.JOPRBUTTON, "deg", oneStepBtnListener), "cell 3 2");
         add(factory.createButton(ButtonType.JOPRBUTTON, "logy(x)", twoStepBtnListener), "cell 4 2");
         add(factory.createButton(ButtonType.JOPRBUTTON, "e", oneStepBtnListener), "cell 5 2");
-        add(factory.createButton(ButtonType.JOPRBUTTON, "(", openBracketListener), "cell 0 3");
-        add(factory.createButton(ButtonType.JOPRBUTTON, ")", closeBracketListener), "cell 1 3");
+
+        btnOpenBracket = new JOprButton("(", openBracketListener);
+        add(btnOpenBracket, "cell 0 3");
+
+        btnCloseBracket = new JOprButton(")", closeBracketListener);
+        add(btnCloseBracket, "cell 1 3");
+
+//        add(factory.createButton(ButtonType.JOPRBUTTON, "(", openBracketListener), "cell 0 3");
+//        add(factory.createButton(ButtonType.JOPRBUTTON, ")", closeBracketListener), "cell 1 3");
+
+
         add(factory.createButton(ButtonType.JOPRBUTTON, "x!", oneStepBtnListener), "cell 2 3");
         add(factory.createButton(ButtonType.JOPRBUTTON, "rand", oneStepBtnListener), "cell 3 3");
         add(factory.createButton(ButtonType.JOPRBUTTON, "Fib(n)", oneStepBtnListener), "cell 4 3");

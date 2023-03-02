@@ -11,8 +11,6 @@ import java.awt.event.ActionListener;
 
 public class EqualBtnListener implements ActionListener {
 
-    // todo check more operations
-
     @Override
     public void actionPerformed(ActionEvent evt) {
 

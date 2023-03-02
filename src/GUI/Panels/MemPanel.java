@@ -10,6 +10,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.*;
 import java.awt.*;
 
+import static GUI.ColorLib.bunkerColor;
 import static GUI.JCalcVars.frameWidth;
 
 public class MemPanel extends JPanel {
@@ -27,8 +28,9 @@ public class MemPanel extends JPanel {
 
         //======== this ========
         setSize(new Dimension(frameWidth, 60));
+        setBackground(bunkerColor);
         setLayout(new MigLayout(
-                "fillx,insets 0 0 0 0,hidemode 3,gap 0 0",
+                "insets 0 0 0 0,hidemode 3,gap 1 1",
                 // columns
                 "[grow,fill]" +
                         "[grow,fill]" +

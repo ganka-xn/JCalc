@@ -6,6 +6,7 @@ import Library.OneStep;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static GUI.JCalc.ioPane;
 import static GUI.JCalcVars.*;
 
 public class OneStepBtnListener implements ActionListener {

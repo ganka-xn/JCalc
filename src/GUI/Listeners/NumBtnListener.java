@@ -8,24 +8,22 @@ import static GUI.JCalcVars.*;
 
 public class NumBtnListener implements ActionListener {
 
-// todo добавить ввод с клавиатуры
-
     @Override
     public void actionPerformed(ActionEvent evt) {
         if (xInStr.contains(".") && evt.getActionCommand() == ".") {
             return;
-        } else if (xInStr == "" && evt.getActionCommand() == "0" && xInDbl == 0) {
+        } else if (xInStr.equals("") && evt.getActionCommand().equals("0") && xInDbl == 0) {
             return;
-        } else if (xInStr == "" && evt.getActionCommand() == ".") {
+        } else if (xInStr.equals("") && evt.getActionCommand().equals(".")) {
             xInStr = "0.";
-            xInput = 0;
+            xInDbl = 0;
             ioPane.fieldX.setText(xInStr);
         } else {
             xInStr += evt.getActionCommand();
             ioPane.fieldX.setText(xInStr);
-            xInput = Double.parseDouble(xInStr);
+            xInDbl = Double.parseDouble(xInStr);
         }
-        xInDbl = xInput;
+//        xInDbl = xInput;
         currentOpr = evt.getActionCommand();
     }
 }

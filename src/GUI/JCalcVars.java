@@ -29,7 +29,7 @@ public class JCalcVars {
     public static boolean oneStepFlag = false;
     public static boolean repeatFlag = false;
 
-    public static final int frameWidth = 420;
+    public static final int frameWidth = 540;
 
     public enum LightFlag { Light, Dark }
     public static LightFlag lightFlag = LightFlag.Dark;
