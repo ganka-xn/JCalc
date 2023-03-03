@@ -2,6 +2,7 @@ package GUI.Panels;
 
 import GUI.ColorLib;
 //import GUI.Excluded.InputKeyListener;
+import GUI.Display;
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
@@ -15,8 +16,11 @@ import static GUI.JCalcVars.frameWidth;
 public class IOPanel extends JPanel {
 
     public JTextField fieldX;
+    public Display display;
 
     public IOPanel() {
+
+        display = new Display();
 
         setLayout(new MigLayout(
                 "insets 5 5 2 5,hidemode 3,alignx center,gap 10 0",

@@ -15,7 +15,6 @@ import javax.swing.*;
 import java.awt.*;
 
 import static GUI.ColorLib.bunkerColor;
-import static GUI.ColorLib.steelColor;
 import static GUI.JCalcVars.frameWidth;
 
 public class FuncPanel extends JPanel {

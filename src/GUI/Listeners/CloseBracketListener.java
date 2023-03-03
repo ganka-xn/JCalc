@@ -1,12 +1,13 @@
 package GUI.Listeners;
 
 import GUI.Display;
-import GUI.OperatorPriority;
 import Library.TwoStep;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static GUI.JCalc.historyPane;
+import static GUI.JCalc.ioPane;
 import static GUI.JCalcVars.*;
 
 public class CloseBracketListener implements ActionListener {
@@ -15,11 +16,18 @@ public class CloseBracketListener implements ActionListener {
     public void actionPerformed(ActionEvent evt) {
 
         if (operatorStack.contains("(")) {
+
+            historyPane.historyText.appendDouble(xInDbl);
+
             while (!operatorStack.peek().equals("(")) {
                 TwoStep.Evaluate(operatorStack.pop());
             }
+
             operatorStack.pop();
-            Display.setDisplay(xInDbl);
+            ioPane.display.setDisplay(xInDbl);
+
+            historyPane.historyText.append(evt.getActionCommand());
+
         }
     }
 }

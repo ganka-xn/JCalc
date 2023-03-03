@@ -1,24 +1,29 @@
 package GUI.Listeners;
 
-import GUI.Display;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static GUI.JCalc.ioPane;
 import static GUI.JCalcVars.*;
 
 public class ResetBtnListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent evt) {
+        clearAllFields();
+    }
+
+    public static void clearAllFields() {
         xInStr = "";
         currentOpr = "";
         previousOpr = "";
-//        ioPane.fieldX.setText("0");
 
         xStack.clear();
         operatorStack.clear();
 
-        Display.setDisplay(0);
+        ioPane.display.setDisplay(0);
+
+        oneStepFlag = true;
+
     }
 }

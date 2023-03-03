@@ -1,6 +1,8 @@
 package GUI.Listeners;
 
 import GUI.Display;
+
+import static GUI.JCalc.ioPane;
 import static GUI.JCalcVars.*;
 
 import java.awt.event.ActionEvent;
@@ -23,13 +25,14 @@ public class MemBtnListener implements ActionListener {
                 break;
             case "mr":
                 xInDbl = memDbl;
-                Display.setDisplay(xInDbl);
+//                ioPane.display.setDisplay(xInDbl);
                 break;
             case "mc":
                 memDbl = 0;
                 break;
         }
 
+        ioPane.display.setDisplay(xInDbl);
         xInStr = "";
 
     }

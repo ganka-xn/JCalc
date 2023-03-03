@@ -1,0 +1,23 @@
+JFDML JFormDesigner: "8.0.2.0.220" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class javax.swing.BoxLayout ) ) {
+			name: "this"
+			"preferredSize": new java.awt.Dimension( 540, 340 )
+			"minimumSize": new java.awt.Dimension( 540, 340 )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				"autoscrolls": true
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea1"
+					"preferredSize": new java.awt.Dimension( 240, 220 )
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

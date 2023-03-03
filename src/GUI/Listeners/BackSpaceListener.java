@@ -24,8 +24,6 @@ public class BackSpaceListener implements ActionListener {
                 xInDbl = Double.parseDouble(xInStr);
                 ioPane.fieldX.setText(xInStr);
             }
-//            Display.setDisplay(xInDbl);
-//            ioPane.fieldX.setText(xInStr);
         }
 
     }

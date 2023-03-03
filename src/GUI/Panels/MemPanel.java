@@ -2,7 +2,6 @@ package GUI.Panels;
 
 import GUI.Buttons.ButtonFactory;
 import GUI.Buttons.ButtonType;
-import GUI.Buttons.JOprButton;
 
 import GUI.Listeners.*;
 
@@ -44,7 +43,7 @@ public class MemPanel extends JPanel {
         //content
         MemBtnListener memBtnListener = new MemBtnListener();
         LDBtnListener ldBtnListener = new LDBtnListener();
-        AltBtnListener altBtnListener = new AltBtnListener();
+        ClearHistoryListener clearHistoryListener = new ClearHistoryListener();
 
         ButtonFactory factory = new ButtonFactory();
 
@@ -54,9 +53,7 @@ public class MemPanel extends JPanel {
         add(factory.createButton(ButtonType.JMEMBUTTON, "mc", memBtnListener), "cell 3 0");
 
         add(factory.createButton(ButtonType.JMEMBUTTON, "L/D", ldBtnListener), "cell 4 0");
-        add(factory.createButton(ButtonType.JMEMBUTTON, "Alt", altBtnListener), "cell 5 0");
-
-        // todo btnAlt
+        add(factory.createButton(ButtonType.JMEMBUTTON, "Clear", clearHistoryListener), "cell 5 0");
 
     }
 }
